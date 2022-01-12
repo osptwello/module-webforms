@@ -1,0 +1,23 @@
+{
+  "name": "mageme/module-webforms",
+  "description": "WebForms Pro M2 - Form Builder for Magento 2",
+  "type": "magento2-module",
+  "version": "2.9.28",
+  "license": "https://mageme.com/license/",
+  "require": {
+    "mpdf/mpdf": "^7|^8",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "ext-fileinfo": "*",
+    "ext-intl": "*",
+    "ext-dom": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "VladimirPopov\\WebForms\\": ""
+    }
+  }
+}

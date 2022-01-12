@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Contact\Block\ContactForm">
+        <plugin name="webforms_contact" type="VladimirPopov\WebForms\Model\Plugin\ContactForm"/>
+    </type>
+    <type name="VladimirPopov\WebForms\Model\File">
+        <arguments>
+            <argument name="frontendUrl" xsi:type="object">Magento\Framework\Url</argument>
+        </arguments>
+    </type>
+</config>

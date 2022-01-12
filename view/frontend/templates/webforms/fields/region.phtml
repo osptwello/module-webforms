@@ -1,0 +1,23 @@
+<?php
+
+use Magento\Directory\Helper\Data;
+
+?>
+<select id="<?= $this->getFieldId()?>region_id" name="<?= $this->getFieldName()?>[region_id]" title="<?= $this->escapeHtml($this->getField()->getName())?>" class="validate-select region_id" style="display:none;">
+    <option value=""><?= $this->escapeHtml(__('Please select a region, state or province.')) ?></option>
+</select>
+<input type="text" id="<?= $this->getFieldId()?>region" name="<?= $this->getFieldName()?>[region]" value="<?= $this->getRegion()?>" title="<?php echo $this->getFieldName()?>" class="input-text?>" style="display:none;">
+<script type="text/x-magento-init">
+    {
+        "#<?= $this->getCountryFieldId()?>": {
+            "webformsRegion": {
+                "optionalRegionAllowed": true,
+                "regionListId": "#<?= $this->getFieldId()?>region_id",
+                "regionInputId": "#<?= $this->getFieldId()?>region",
+                "regionJson": <?= /* @noEscape */ $this->helper(Data::class)->getRegionJson() ?>,
+                "isRegionRequired": <?= $this->getField()->getRequired()?>,
+                "currentRegion": "<?= $this->getRegionId()?>"
+            }
+        }
+    }
+</script>

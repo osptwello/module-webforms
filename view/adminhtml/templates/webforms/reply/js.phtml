@@ -1,0 +1,113 @@
+<script type="text/javascript">
+    //<![CDATA[
+    require(['jquery'], function ($) {
+        deleteMessage = function (messageId) {
+            if (confirm('<?php echo __('Delete this message?')?>')) {
+                $.ajax({
+                    url: '<?php echo $this->getUrl('*/message/delete')?>',
+                    data: {
+                        id: messageId
+                    },
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data, status, xhr) {
+                        var message = $('#history-message-' + messageId);
+                        message.fadeOut({
+                            duration: 500,
+                            start: function () {
+                                message.css({
+                                    'transition': 'all 0.5s ease',
+                                    'transform': 'translateY(100px)'
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        };
+
+        emailMessage = function (messageId) {
+            if (confirm('<?php echo __('E-mail this message?')?>')) {
+                $('body').trigger('processStart');
+                $.ajax({
+                    url: '<?php echo $this->getUrl('*/message/email')?>',
+                    data: {
+                        id: messageId
+                    },
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data, status, xhr) {
+                        if (data.success) {
+                            $('#subdue-' + messageId).html('<?php echo __('E-mailed') ?>');
+                            alert('<?php echo __('E-mail has been sent.')?>');
+                        } else {
+                            alert(data.errors);
+                        }
+                    },
+                    complete: function() {
+                        $('body').trigger('processStop');
+                    }
+                });
+            }
+        };
+
+        function insertAtCursor(myFieldName, myValue) {
+            var myField = $(myFieldName);
+
+            // IE support
+            if (document.selection) {
+                myField.focus();
+                sel = document.selection.createRange();
+                sel.text = myValue;
+
+                // MOZILLA/NETSCAPE support
+            } else if (myField.selectionStart || myField.selectionStart == '0') {
+
+                var startPos = myField.selectionStart;
+                var endPos = myField.selectionEnd;
+                myField.value = myField.value.substring(0, startPos) + myValue + myField.value.substring(endPos, myField.value.length);
+
+            } else {
+                myField.value += myValue;
+            }
+
+            if (tinyMCE) {
+                if (tinyMCE.activeEditor) {
+                    tinyMCE.activeEditor.execCommand('mceInsertContent', false, myValue);
+                } else {
+                    if(tinyMCE.execInstanceCommand) {
+                        tinyMCE.execInstanceCommand(myFieldName, "mceInsertContent", false, myValue);
+                    } else {
+                        $(myFieldName).val(function( i, val ) {
+                            return val + myValue;
+                        });
+                    }
+                }
+            }
+        }
+
+        var button = $('#quickresponse_button');
+        if (button.length) {
+            button.click(function () {
+                var quickResponse = $('#quick_response');
+                if (quickResponse[0].selectedIndex) {
+                    $.ajax({
+                        url: '<?php echo $this->getUrl('*/quickresponse/get')?>',
+                        data: {
+                            id: quickResponse.val()
+                        },
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function (data, status, xhr) {
+                            insertAtCursor('#message', data.message || '');
+                        }
+                    });
+                } else {
+                    alert('<?php echo __('Please select quick response from the list') ?>');
+                }
+            });
+        }
+
+    })
+    //]]>
+</script>

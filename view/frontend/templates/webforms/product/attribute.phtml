@@ -1,0 +1,8 @@
+<?php
+$_product       = $block->getData('product');
+$_attributeCode = $block->getData('attribute');
+if ($_product && $_attributeCode) {
+    $_attribute = $_product->getResource()->getAttribute($_attributeCode);
+    if ($_attribute)
+        echo $_attribute->getFrontend()->getValue($_product);
+}

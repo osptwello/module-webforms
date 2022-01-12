@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_delete_after">
+        <observer name="webforms_customer_delete_after" instance="VladimirPopov\WebForms\Observer\CustomerDeleteAfterObserver" />
+    </event>
+    <event name="webforms_form_import">
+        <observer name="vladimirpopov_webforms_webforms_form_import" instance="VladimirPopov\WebForms\Observer\WebformsFormImportObserver"/>
+    </event>
+    <event name="webforms_form_duplicate">
+        <observer name="vladimirpopov_webforms_webforms_form_duplicate" instance="VladimirPopov\WebForms\Observer\WebformsFormImportObserver"/>
+    </event>
+</config>

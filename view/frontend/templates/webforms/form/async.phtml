@@ -1,0 +1,34 @@
+<?php
+if ($this->getForm()->getIsActive() == \VladimirPopov\WebForms\Model\Form::STATUS_DISABLED || !$this->isDirectAvailable()) {
+    echo $this->getNotAvailableMessage();
+} else { ?>
+
+    <?php if ($this->getSuccess()) { ?>
+        <div class="webforms-success-text">
+            <?php echo $this->getSuccessText() ?>
+        </div>
+    <?php } ?>
+
+    <?php if (($this->getSuccess() && $this->getData('after_submission_form')) || !$this->getSuccess()) { ?>
+        <div id="webform-async-<?php echo $this->getUid() ?>"></div>
+        <script>
+            require(['jquery'], function ($) {
+                $.ajax({
+                    url: '<?php echo $this->getData('async_url')?>'.replace('#WIDGET_KEY#', Math.random().toString(36).substring(7)),
+                    method: 'POST',
+                    data: {
+                        webform_id: '<?php echo $this->getForm()->getId()?>',
+                        scroll_to: '<?php echo $this->getData('scroll_to')?>',
+                        after_submission_form: '<?php echo $this->getData('after_submission_form')?>',
+                        focus: '<?php echo $this->getData('focus')?>',
+                        template: '<?php echo $this->getData('widget_template')?>',
+                        current_url: '<?php echo $this->getData('current_url')?>'
+                    },
+                    success: function (result) {
+                        $('#webform-async-<?php echo $this->getUid() ?>').html(result);
+                    }
+                });
+            });
+        </script>
+    <?php } ?>
+<?php } ?>

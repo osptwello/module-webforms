@@ -1,0 +1,18 @@
+<?php
+/** @var Template $block */
+
+use Magento\Framework\View\Element\Template;
+
+$prefix = $block->getData('prefix');
+$suffix = $block->getData('suffix');
+$length = $block->getData('length');
+$characters = $block->getData('characters');
+if(!$length) $length = 10;
+if(!$characters) $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$charactersLength = strlen($characters);
+$randomString = '';
+for ($i = 0; $i < $length; $i++) {
+    $randomString .= $characters[rand(0, $charactersLength - 1)];
+}
+
+echo $prefix.$randomString.$suffix;

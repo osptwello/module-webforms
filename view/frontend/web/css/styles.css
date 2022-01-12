@@ -1,0 +1,713 @@
+.webforms {
+    margin-bottom: 1.5rem;
+}
+
+.webforms .field {
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.webforms .fieldset {
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.webforms .actions-toolbar {
+    box-sizing: border-box;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    clear: both;
+}
+
+.webforms .inline-elements .choice {
+    display: inline-flex;
+}
+
+/* Success text */
+.webforms-success-text {
+    margin-bottom: 2rem;
+}
+
+/* Starry script */
+
+div.starry {
+    width: auto;
+    margin: -4px 0 10px 0;
+    padding: 5px;
+    width: auto;
+}
+
+div.standard_star {
+    background-repeat: no-repeat;
+    cursor: pointer;
+    float: left;
+    display: inline;
+    background-image: url(../images/stars.gif);
+}
+
+div.feedback {
+    border: 1px solid #ddd;
+    padding: 5px 3px 3px;
+    display: inline;
+}
+
+/* Date of birth */
+
+.customer-dob .dob-month,
+.customer-dob .dob-day,
+.customer-dob .dob-year {
+    float: left;
+    width: 8.5rem;
+}
+
+.customer-dob input.input-text {
+    display: block;
+    width: 7.4rem;
+}
+
+.customer-dob label {
+    font-size: 10px;
+    font-weight: normal;
+    color: #888;
+}
+
+.customer-dob .dob-day,
+.customer-dob .dob-month {
+    width: 6rem;
+}
+
+.customer-dob .dob-day input.input-text,
+.customer-dob .dob-month input.input-text {
+    width: 4.6rem;
+}
+
+.customer-dob .dob-year {
+    width: 14rem;
+}
+
+.customer-dob .dob-year input.input-text {
+    width: 13.4rem;
+}
+
+/* Tooltip */
+
+.ot-content {
+    text-align: left;
+}
+
+.tooltip-icon {
+    background-image: url('../images/tooltip.png');
+    background-size: 1.5rem 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0.2rem 0.5rem;
+}
+
+/* Select images */
+.webforms figcaption {
+    padding: 5px 0;
+    margin: 5px;
+}
+
+/* Form */
+
+.webforms-description-text {
+    margin-bottom: 4rem;
+}
+
+.webforms-fields-comment {
+    font-size: 90%;
+    clear: both;
+    margin-top: 1rem;
+}
+
+.please-wait {
+    padding-top: 0.5rem;
+}
+
+.please-wait .loading-indicator {
+    background: #fff url(../images/ajax-loader-big.gif) no-repeat;
+    background-size: 1.8rem;
+    display: inline-block;
+    width: 1.8rem;
+    height: 1.8rem;
+    vertical-align: bottom;
+    margin-bottom: 0.2rem;
+}
+
+/* reCaptcha v2 */
+
+.recaptcha2 {
+    clear: both;
+    box-sizing: border-box;
+    padding: 0 2rem 2rem 0;
+    width: 100%;
+    float: left;
+}
+
+/* Validation */
+
+.validation-advice {
+    margin-top: 0.7rem;
+    font-size: 1.2rem;
+    color: #e02b27;
+    clear: both;
+}
+
+input.validation-failed, textarea.validation-failed {
+    border-color: #ed8380;
+}
+
+/* Customer Account */
+
+.webforms-customer-account-form {
+    margin-top: 3rem;
+    border: 1px solid #eee;
+    padding: 2rem;
+}
+
+.webforms-customer-account-message {
+    background: rgba(255, 212, 96, 0.26);
+    padding: 3rem;
+}
+
+.block-webforms-form .actions-toolbar {
+    margin: 17px 0;
+}
+
+/* Results */
+
+.webforms-results-block {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #cccccc;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+.webforms-results-field {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.webforms-results-label {
+    font-weight: bold;
+    width: 100%;
+}
+
+.webforms-results-value {
+    padding: 5px 0;
+}
+
+.webforms-results-value .webforms-image {
+    float: left;
+    margin-right: 2rem;
+}
+
+/* Star rating */
+
+.stars {
+    padding: 0 5px;
+    width: 80px;
+    display: inline;
+    float: left;
+}
+
+.stars-bar {
+    list-style: none;
+    margin: 0px;
+    padding: 0px !important;
+    height: 16px;
+    position: relative;
+    background: url(../images/results_stars.png) top left repeat-x;
+}
+
+.stars-bar li {
+    padding: 0px;
+    margin: 0px;
+    /*\*/
+    float: left;
+    /* */
+}
+
+.stars-bar li.stars-value {
+    background: url(../images/results_stars.png) left bottom;
+    position: absolute;
+    height: 16px;
+    display: block;
+    z-index: 1;
+}
+
+.webforms-rating-summary {
+    margin-bottom: 15px;
+}
+
+.webforms-results-table .col.id {
+    width: 15%;
+}
+
+/* Auto-complete */
+.autocomplete-suggestions {
+    text-align: left;
+    cursor: default;
+    border: 1px solid #ccc;
+    border-top: 0;
+    background: #fff;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, .1);
+
+    /* core styles should not be changed */
+    position: absolute;
+    display: none;
+    z-index: 9999;
+    max-height: 254px;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.autocomplete-suggestion {
+    position: relative;
+    padding: 0 .6em;
+    line-height: 23px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.02em;
+    color: #333;
+}
+
+.autocomplete-suggestion b {
+    font-weight: normal;
+    color: #1f8dd6;
+}
+
+.autocomplete-suggestion.selected {
+    background: #f0f0f0;
+}
+
+/* File preview */
+
+.file-preview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.file-preview h3 {
+    font-size: 12px;
+}
+
+.file-preview li {
+    margin: 0;
+    padding: 10px 0;
+    margin: 0;
+    overflow: auto;
+    position: relative;
+}
+
+.file-preview li img {
+    border: solid 1px #999;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 0 10px 0 0;
+    display: block;
+    float: left;
+}
+
+.file-cancel {
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.file-progress {
+    font-size: 90%;
+    color: #777;
+}
+
+/* Calendar */
+
+.webforms-datepicker {
+    margin-bottom: 1rem;
+}
+
+.webforms-calendar {
+    position: relative;
+    width: 20rem;
+    display: inline-block;
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+}
+
+.webforms-calendar .ui-datepicker-trigger {
+    margin-left: -3.2rem;
+    height: 2.8rem;
+    position: absolute;
+    top: .4rem;
+    right: .5rem;
+}
+
+.webforms-time {
+    display: inline-block;
+}
+
+.webforms-time .hours, .webforms-time .minutes {
+    display: inline;
+    width: 6rem;
+}
+
+.multiselect {
+    height: auto;
+    background-image: none;
+}
+
+/* Date picker button */
+
+@font-face {
+    font-family: 'luma-icons';
+    src: url(fonts/Luma-Icons.woff);
+}
+
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger {
+    background-image: none;
+    background: none;
+    -moz-box-sizing: content-box;
+    border: 0;
+    box-shadow: none;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+    font-weight: 400;
+    display: block;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: -4px;
+    vertical-align: middle;
+}
+
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger:focus,
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger:active {
+    background: none;
+    border: none;
+}
+
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger:hover {
+    background: none;
+    border: none;
+}
+
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger.disabled,
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger[disabled],
+fieldset[disabled] .webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger > span {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 23px;
+    line-height: 23px;
+    color: #7d7d7d;
+    content: '\e612';
+    font-family: 'luma-icons';
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: normal;
+    overflow: hidden;
+    speak: none;
+    text-align: center;
+}
+
+.webforms-datepicker ._has-datepicker ~ .ui-datepicker-trigger:focus {
+    box-shadow: none;
+    outline: 0;
+}
+
+/* Drop-zone */
+
+.drop-zone {
+    padding: 2rem .7rem;
+    color: #777;
+    border: .2rem dashed #ddd;
+    border-radius: .4rem;
+    opacity: .9;
+    cursor: pointer;
+}
+
+.drop-zone-preview-container {
+    margin-bottom: 10px;
+}
+
+.drop-zone:hover {
+    background-color: #f5f5f5;
+}
+
+.drop-zone-label {
+    display: inline-block !important;
+    vertical-align: top !important
+}
+
+.icon-paperclip {
+    color: rgb(240, 120, 0) !important;
+    fill: rgb(240, 120, 0) !important;
+}
+
+.icon-paperclip svg {
+    transform: rotate(45deg) scaleX(-1);
+}
+
+.text-center {
+    text-align: center !important
+}
+
+.drop-zone-preview {
+    background: #f8f8f8;
+    border: .09167rem solid #dadada;
+    border-radius: .33333rem;
+    color: #999;
+    padding: 5px;
+    margin-bottom: 5px;
+    line-height: inherit;
+    position: relative;
+}
+
+.drop-zone-attachment {
+    overflow: auto;
+    height: auto;
+    z-index: 2;
+    width: 100% !important;
+    position: relative;
+}
+
+.drop-zone-preview-icon-file {
+    padding-right: .66667rem;
+    float: left !important;
+}
+
+.drop-zone-preview-icon-file svg path {
+}
+
+.drop-zone-preview-file {
+    width: 70%;
+    float: left !important;
+}
+
+.drop-zone-preview-filename {
+    max-width: 62%;
+    color: #333;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-wrap: normal !important;
+    white-space: nowrap !important;
+    float: left !important;
+    vertical-align: top !important;
+}
+
+.drop-zone-preview-filename-end {
+    color: #333;
+}
+
+.drop-zone-preview-size, .drop-zone-error {
+    clear: left;
+    float: left !important;
+}
+
+.drop-zone-error {
+    color: red;
+}
+
+.drop-zone-preview-icon-close {
+    position: absolute;
+    top: 50%;
+    right: .41667rem;
+    margin-top: -2.2rem !important;
+    padding-top: 1rem;
+    border: 0;
+    cursor: pointer !important;
+    float: right !important;
+}
+
+.drop-zone-preview-icon-close svg {
+    fill: #999;
+}
+
+.drop-zone-progress, .drop-zone-progress-success {
+    position: absolute;
+    border-radius: .33333rem;
+    background-color: #00ff08;
+    opacity: .1;
+    height: 100% !important;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.drop-zone-progress-success {
+    opacity: 0;
+}
+
+.webforms .webforms-gdpr {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    float:left;
+}
+
+.webforms .webforms-gdpr-checkbox {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding-left: 0;
+}
+
+.webforms-popup {
+    position: relative;
+    background: #FFF;
+    padding: 2rem;
+    margin: 2rem auto;
+    box-sizing: border-box;
+    border-radius: .7rem;
+}
+
+@media screen and (min-width: 20em) {
+    .webforms-popup {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 48em) {
+    .webforms-popup {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .webforms-popup {
+        width: 80%;
+    }
+}
+
+/* Customer result action buttons */
+
+.webforms-result-action{
+    display: block;
+    background: #f5f5f5;
+    text-align: center;
+    padding: .3rem .1rem;
+    margin: .5rem .1rem;
+    white-space: nowrap;
+    color: #888;
+    text-decoration: none;
+}
+.webforms-result-action:hover{
+    text-decoration: none;
+    color:white;
+    background: #8bc53f;
+}
+.result-action-delete {
+    border-color: red;
+}
+.result-action-delete:hover{
+    background: red;
+}
+
+/* File pool */
+.webforms-file-pool {
+    display: table;
+    margin-bottom: 10px;
+}
+.webforms-file-pool-selectall{
+    margin-bottom:5px;
+}
+.webforms-file-pool-selectall label{
+    font: bold 10px/16px Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #888;
+    float:none !important;
+    margin-left:5px;
+
+}
+.webforms-file-cell{
+    float:left;
+    flex:1;
+    height: auto;
+    text-align: center;
+    font: bold 9px/16px Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #888;
+    display: table-cell;
+
+}
+.webforms-file-cell p label{
+    color: #888;
+
+}
+.webforms-file-cell p {
+    padding-top: 5px;
+    margin-left: -10px;
+    float: left;
+    clear: both;
+    width: 100%;
+}
+.webforms-file-cell label{
+    float:none !important;
+    margin-left:5px;
+}
+
+.webforms-file-link{
+    display: block;
+    border-radius:5px;
+    float:left;
+    margin-right:10px;
+    height:auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.6);
+    background: #f5f5f5;
+    max-width:200px;
+    padding:5px 10px;
+}
+.webforms-file-link:hover {
+    box-shadow: 0 0 7px rgba(0,0,0,0.6);
+    background: white;
+    color: #888;
+
+}
+.webforms-file-link figure p{
+    margin:10px 0 5px 0;
+}
+.webforms-file-link figure img{
+    background:white;
+}
+
+.webforms-file-link-name {
+    display:inline;
+    max-width:60%;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    word-wrap: normal !important;
+    white-space: nowrap !important;
+    float:left;
+}
+.webforms-file-link-name-end {display:inline;}
+
+.webforms-file-delete-checkbox{
+    vertical-align: baseline;
+}

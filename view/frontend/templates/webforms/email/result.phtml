@@ -1,0 +1,4 @@
+<?php
+/** @var \VladimirPopov\WebForms\Block\Email\Result $this */
+if($this->getResult())
+    echo $this->getResult()->toHtml($this->getRecipient());

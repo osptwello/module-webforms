@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="result_listing_data_source" xsi:type="string">VladimirPopov\WebForms\Model\ResourceModel\Result\Grid\Collection</item>
+                <item name="customer_result_listing_data_source" xsi:type="string">VladimirPopov\WebForms\Model\ResourceModel\Result\Customer\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="VladimirPopov\WebForms\Model\ResourceModel\Result\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">webforms_results</argument>
+            <argument name="eventPrefix" xsi:type="string">webforms_result_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">result_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">VladimirPopov\WebForms\Model\ResourceModel\Form</argument>
+        </arguments>
+    </type>
+    <type name="VladimirPopov\WebForms\Model\ResourceModel\Result\Customer\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">webforms_results</argument>
+            <argument name="resourceModel" xsi:type="string">VladimirPopov\WebForms\Model\ResourceModel\Result</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Mail\EmailMessage">
+        <arguments>
+            <argument name="encoding" xsi:type="string">utf-8</argument>
+        </arguments>
+    </type>
+    <virtualType name="ResultListingDataProvider" type="VladimirPopov\WebForms\Ui\Component\Result\Listing\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">VladimirPopov\WebForms\Model\ResourceModel\Result\Collection</argument>
+        </arguments>
+    </virtualType>
+</config>

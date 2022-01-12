@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="webforms_form" class="VladimirPopov\WebForms\Block\Widget\Form">
+        <label>Web-forms: Form</label>
+        <description><![CDATA[Add web-form to a page. <div style="color:red; font-weight:bold">Please enable "Asynchronous form loading" if you are using pre-filled values.</div>]]></description>
+        <parameters>
+            <parameter name="webform_id" xsi:type="select" visible="true"
+                       source_model="VladimirPopov\WebForms\Model\Config\Form">
+                <label>Web-form</label>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="true">
+                <label>Template</label>
+                <options>
+                    <option name="default" value="webforms/form/default.phtml" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="multistep" value="webforms/form/multistep.phtml">
+                        <label translate="true">Multistep (display fieldsets as steps)</label>
+                    </option>
+                    <option name="sidebar" value="webforms/form/sidebar.phtml">
+                        <label translate="true">Sidebar (compact sidebar block)</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="after_submission_form" xsi:type="select" required="false" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label>Display form after submission</label>
+                <description translate="true">Don't hide form after successful submission</description>
+            </parameter>
+            <parameter name="scroll_to" xsi:type="select" required="false" visible="true"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label>Scroll to success message</label>
+                <description translate="true">Scroll to the top of success message after form submission</description>
+            </parameter>
+            <parameter name="async_load" xsi:type="select" required="false" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label>Asynchronous form loading</label>
+                <description translate="true"><![CDATA[<div style="color:red; font-weight:bold">Please enable if you are using pre-filled values.</div> Load form asynchronously with ajax request to fix full page caching issues]]></description>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="webforms_result" class="VladimirPopov\WebForms\Block\Widget\Result">
+        <label>Web-forms: Results</label>
+        <description>Adds web-form collected results to a page</description>
+        <parameters>
+            <parameter name="webform_id" xsi:type="select" visible="true"
+                       source_model="VladimirPopov\WebForms\Model\Config\Form">
+                <label>Web-form</label>
+            </parameter>
+            <parameter name="page_size" xsi:type="text" visible="true" required="true">
+                <label>Results per page</label>
+                <value>10</value>
+            </parameter>
+            <parameter name="image_width" xsi:type="text" visible="true">
+                <label>Image width (maximum)</label>
+                <value>200</value>
+            </parameter>
+            <parameter name="image_height" xsi:type="text" visible="true">
+                <label>Image height (maximum)</label>
+                <value>200</value>
+            </parameter>
+            <parameter name="image_link" xsi:type="select" visible="true">
+                <label>Image link</label>
+                <description>You need to enable "Allow frontend file downloads" in Access Settings of the form</description>
+                <options>
+                    <option name="yes" value="1">
+                        <label>Yes</label>
+                    </option>
+                    <option name="no" value="0" selected="true">
+                        <label>No</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="true">
+                <label>Template</label>
+                <options>
+                    <option name="default" value="webforms/result/default.phtml" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="webforms_button" class="VladimirPopov\WebForms\Block\Widget\Button">
+        <label>Web-forms: Button with popup</label>
+        <description><![CDATA[Adds button which opens popup with the form. <div style="color:red; font-weight:bold">Please enable "Asynchronous form loading" if you are using pre-filled values.</div>]]></description>
+        <parameters>
+            <parameter name="webform_id" xsi:type="select" visible="true"
+                       source_model="VladimirPopov\WebForms\Model\Config\Form">
+                <label>Web-form</label>
+            </parameter>
+            <parameter name="template" xsi:type="select" visible="true">
+                <label>Button template</label>
+                <options>
+                    <option name="default" value="webforms/button/default.phtml" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="form_template" xsi:type="select" visible="true">
+                <label>Form template</label>
+                <options>
+                    <option name="default" value="webforms/form/default.phtml" selected="true">
+                        <label translate="true">Default</label>
+                    </option>
+                    <option name="multistep" value="webforms/form/multistep.phtml">
+                        <label translate="true">Multistep (display fieldsets as steps)</label>
+                    </option>
+                    <option name="sidebar" value="webforms/form/sidebar.phtml">
+                        <label translate="true">Sidebar (compact sidebar block)</label>
+                    </option>
+                </options>
+            </parameter>
+            <parameter name="button_text" xsi:type="text" visible="true" required="true">
+                <label>Button text</label>
+            </parameter>
+            <parameter name="button_css_class" xsi:type="text" visible="true">
+                <label>Custom button CSS classes</label>
+                <description>Custom CSS classes for button</description>
+            </parameter>
+            <parameter name="popup_css_class" xsi:type="text" visible="true">
+                <label>Custom popup CSS classes</label>
+                <description>Custom CSS classes for popup</description>
+            </parameter>
+            <parameter name="async_load" xsi:type="select" required="false" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label>Asynchronous form loading</label>
+                <description translate="true"><![CDATA[<div style="color:red; font-weight:bold">Please enable if you are using pre-filled values.</div> Load form asynchronously with ajax request to fix full page caching issues]]></description>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>
